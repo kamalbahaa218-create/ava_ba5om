@@ -1,0 +1,132 @@
+@import "tailwindcss"  source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "Gold ink manuscript"
+ * أسرة افا باخوم — Arabic RTL Sunday School app.
+ * All colors are oklch tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Manuscript palette */
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-oxblood: var(--oxblood);
+  --color-line: var(--line);
+  --color-panel: var(--panel);
+
+  --font-display: "Cairo", sans-serif;
+  --font-body: "IBM Plex Sans Arabic", sans-serif;
+  --font-signature: "Great Vibes", cursive;
+
+  --ease-manuscript: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --animate-rise: rise 500ms var(--ease-manuscript) both;
+  --animate-rise2: rise2 500ms var(--ease-manuscript) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rise2 {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --paper: oklch(0.948 0.031 89.5);
+  --ink: oklch(0.268 0.048 268.5);
+  --ink-soft: oklch(0.487 0.029 268);
+  --gold: oklch(0.703 0.117 82.5);
+  --gold-soft: oklch(0.849 0.089 87.5);
+  --oxblood: oklch(0.388 0.106 20.5);
+  --line: oklch(0.268 0.048 268.5 / 8%);
+  --panel: oklch(1 0 0 / 50%);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--panel);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.985 0.012 89.5);
+  --popover-foreground: var(--ink);
+  --primary: var(--oxblood);
+  --primary-foreground: var(--gold-soft);
+  --secondary: var(--gold-soft);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.268 0.048 268.5 / 5%);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.012 89.5);
+  --border: var(--line);
+  --input: oklch(0.268 0.048 268.5 / 14%);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+@utility rule-line {
+  height: 1px;
+  flex: 1 1 0%;
+  background-color: var(--color-line);
+}
