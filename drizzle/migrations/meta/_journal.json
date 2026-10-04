@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790553829350,
+      "tag": "0000_foundation_auth_classes_permissions",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790726928630,
+      "tag": "0001_attendance_points_followup",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790900560468,
+      "tag": "0002_content_and_user_status",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791072156759,
+      "tag": "0003_revoke_anon_helper_execute",
+      "breakpoints": true
+    }
+  ]
+}
